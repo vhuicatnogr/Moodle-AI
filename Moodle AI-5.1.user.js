@@ -30,7 +30,6 @@
     function extract() {
         const questions = document.querySelectorAll('.que');
         let output = "(Paste this code to any AI of your preference.)\nPlease resolve the following physics problems. For each question, provide the exact text of the correct option. Ensure that individual answers are separated by 'ABC'. Your response must contain no introductory remarks and should exclude any option labels such as a, b, c, or d. Adhere strictly to the original capitalization and do not include line breaks, as the final output must be a single sequence of text.\n\n";
-
         questions.forEach((q) => {
             const qno = q.querySelector('.qno')?.innerText.replace(/\D/g, '') || "??";
             const qtext = q.querySelector('.qtext')?.innerText.trim() || '';
