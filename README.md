@@ -24,7 +24,7 @@ This tool is a **Userscript**. To use it, follow these steps:
 ## 🛠️ How to Use
 
 1.  Navigate to your Moodle quiz.
-2.  The solver interface will appear (or use the designated hotkey).
+2.  The solver interface will appear.
 3.  **Extract:** Copy the question content provided by the script.
 4.  **Solve:** Paste it into your preferred AI.
 5.  **Inject:** Paste the AI's response back into the script's input field to automate the Moodle form.
