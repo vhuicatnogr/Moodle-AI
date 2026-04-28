@@ -1,6 +1,6 @@
 # Moodle AI Solver 🎓
 
-A lightweight Userscript designed for students to bridge the gap between Moodle assessments and AI intelligence. This tool simplifies extracting quiz questions and automating the response process.
+A lightweight Userscript designed for Basis students by a Basis student to bridge the gap between Moodle assessments and AI intelligence. This tool simplifies extracting quiz questions and automating the response process.
 
 **Status:** ✅ Working as of April 27th of 2026
 
