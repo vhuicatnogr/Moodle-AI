@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      5.1
 // @author       Victor
-// @include      https://moodle.basischina.com:*/mod/quiz/attempt.php?attempt=*
+// @include      https://moodle.basischina.com:8090/mod/quiz/attempt.php?attempt=*
 // @grant        none
 // @description  Solve Moodle easily!
 // ==/UserScript==
