@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         Moodle AI
 // @namespace    http://tampermonkey.net/
-// @version      5.2
+// @version      5.3
 // @author       Victor
 // @include      https://moodle.basischina.com:8090/mod/quiz/attempt.php?attempt=*
 // @grant        none
 // @description  Solve Moodle easily!
+// @updateURL    https://githubusercontent.com
+// @downloadURL  https://githubusercontent.com
 // ==/UserScript==
 (function() {
     'use strict';
