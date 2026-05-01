@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Moodle AI
 // @namespace    http://tampermonkey.net/
-// @version      5.4
+// @version      5.5
 // @author       Victor
 // @include      https://moodle.basischina.com:8090/mod/quiz/attempt.php?attempt=*
 // @grant        none
