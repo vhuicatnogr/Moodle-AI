@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Moodle AI
 // @namespace    http://tampermonkey.net/
-// @version      5.1
+// @version      5.2
 // @author       Victor
 // @include      https://moodle.basischina.com:8090/mod/quiz/attempt.php?attempt=*
 // @grant        none
@@ -50,24 +50,40 @@
             win.document.title = "Extracted Questions";
         }
     }
-    function fill() {
-        const input = prompt("paste answers (separated by ABC):");
-        if (!input) return;
-        const allAnswers = input.split('ABC').map(s => s.trim());
-        document.querySelectorAll('.que').forEach(q => {
-            const qno = parseInt(q.querySelector('.qno')?.innerText.replace(/\D/g, ''));
-            const target = allAnswers[qno - 1];
-            if (!target) return;
-            q.querySelectorAll('input[type="radio"]').forEach(radio => {
-                const lid = radio.getAttribute('aria-labelledby');
-                const label = document.getElementById(lid) || radio.closest('label') || radio.parentElement;
-                if (label && label.innerText.trim().includes(target)) {
-                    radio.click();
-                    radio.checked = true;
-                    radio.dispatchEvent(new Event('change', {bubbles: true}));
+        function fill() {
+            const input = prompt("paste answers (separated by ABC):");
+            if (!input) return;
+            const allAnswers = input.split('ABC').map(s => s.trim());
+            let missedQuestions = [];
+            document.querySelectorAll('.que').forEach(q => {
+                const qno = q.querySelector('.qno')?.innerText.replace(/\D/g, '') || "??";
+                const target = allAnswers[parseInt(qno) - 1];
+                if (!target) {
+                    missedQuestions.push(qno);
+                    return;
+                }
+                let found = false;
+                q.querySelectorAll('input[type="radio"]').forEach(radio => {
+                    const lid = radio.getAttribute('aria-labelledby');
+                    const label = document.getElementById(lid) || radio.closest('label') || radio.parentElement;
+                    if (label && label.innerText.trim().includes(target)) {
+                        radio.click();
+                        radio.checked = true;
+                        radio.dispatchEvent(new Event('change', {bubbles: true}));
+                        found = true;
+                    }
+                });
+                if (!found) {
+                    missedQuestions.push(qno);
                 }
             });
-        });
-    }
+            if (missedQuestions.length > 0) {
+                alert("Could not find a match for Question(s): " + missedQuestions.join(', '));
+            }
+            else {
+                alert("All matches found and filled!");
+            }
+        }
+
     createui();
 })();
