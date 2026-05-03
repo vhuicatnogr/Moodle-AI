@@ -17,9 +17,9 @@ This tool is a **Userscript**. To use it, follow these steps:
 
 1.  **Install Tampermonkey:** Download the extension for [Chrome](https://google.com/search?q=tampermonkey+chrome), [Firefox](https://google.com/search?q=tampermonkey+firefox), or [Edge](https://google.com/search?q=tampermonkey+edge).
 2.  **Create New Script:** Click the Tampermonkey icon in your browser and select "Create a new script."
-3.  **Paste the Code:** Delete any template code and paste the content of `Moodle AI-5.1.user.js` (found in this repo).
+3.  **Paste the Code:** Delete any template code and paste the content of `Moodle AI.user.js` (found in this repo).
 4.  **Save:** Press `Ctrl+S` or File > Save.
-5.  If you already have Tampermonkey installed, click [here](https://raw.githubusercontent.com/vhuicatnogr/Moodle-AI/main/Moodle%20AI-5.1.user.js)
+5.  If you already have Tampermonkey installed, click [here](https://raw.githubusercontent.com/vhuicatnogr/Moodle-AI/main/Moodle%20AI.user.js)
 
 ## 🛠️ How to Use
 
